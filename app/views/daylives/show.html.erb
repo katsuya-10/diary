@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @daylife.id %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @daylife.title %>
+</p>
+
+<p>
+  <strong>本文:</strong>
+  <%= @daylife.body %>
+</p>
+
+<p>
+  <strong>登録日時:</strong>
+  <%= @daylife.created_at %>
+</p>
+
+<p>
+  <strong>更新日時:</strong>
+  <%= @daylife.updated_at %>
+</p>
+
+<%= link_to '編集', edit_daylife_path(@daylife) %> |
+<%= link_to '削除', @daylife, method: :delete, data: { confirm: '本当に削除しますか?' } %> |
+<%# 削除リンクのhtml %>
+<%= link_to '一覧に戻る', daylives_path %>

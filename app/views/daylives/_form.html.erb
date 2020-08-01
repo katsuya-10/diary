@@ -1,0 +1,32 @@
+<%= form_with(model: daylife, local: true) do |form| %>
+<%# form_with(model:モデルクラスのインスタンス,local:真偽値) do |form| モデルに対応したフォームを作成するhtml出力 %>
+  <% if daylife.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(daylife.errors.count, "error") %> prohibited this daylife from being saved:</h2>
+
+      <ul>
+      <% daylife.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%# form.label フィールド名  %>
+    <%= form.text_field :title %>
+    <%# form.text_field 引数,属性名1:値1,属性名2:値2,...%>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <%# form.text_area 引数,属性名1:値1,属性名2:値2,... %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+    <%# submitボタンを出力 %>
+  </div>
+<% end %>
